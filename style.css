@@ -1,0 +1,309 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&family=Luckiest+Guy&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Layout */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Fredoka One', cursive;
+    background: #F8F9FA;
+    color: #34495E;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1E90FF, #39FF14);
+    padding: 15px 30px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.logo {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #FFEB3B;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hero h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background: #FF4081;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-family: 'Luckiest Guy', cursive;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background: #E73370;
+}
+
+/* Play Section */
+.play {
+    padding: 60px 20px;
+    background: #f4faff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    gap: 30px;
+}
+
+.image-container {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.play-text {
+    flex: 1 1 400px;
+}
+
+.play-text h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    color: #1E90FF;
+    margin-bottom: 15px;
+}
+
+.play-text p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* How to Play */
+.how-to-play {
+    margin: 20px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.how-to-play h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.how-to-play ul {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 30px;
+}
+
+.how-to-play ul li {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.note {
+    font-style: italic;
+    color: #666;
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    background: white;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.about h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.2rem;
+    color: #1E90FF;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.contact-info {
+    list-style: none;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.contact-info li {
+    margin-bottom: 8px;
+}
+
+.contact-info i {
+    margin-right: 8px;
+    color: #FF4081;
+}
+
+.contact-info a {
+    color: #39FF14;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #FF4081;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 20px auto 0;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: 'Fredoka One', cursive;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: fit-content;
+    align-self: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    background: #1E90FF;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+footer a {
+    color: #FFEB3B;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #b71f1f;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .play-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .image-container,
+    .play-text {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1E90FF;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
