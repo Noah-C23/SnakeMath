@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SnakeMath Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Luckiest+Guy&family=Bangers&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Game Header -->
+    <header class="game-header">
+        <h1>SnakeMath.io</h1>
+    </header>
+
+    <header class="top-bar">
+        <div class="selectors">
+            <label for="typeSelect">Math Type</label>
+            <select id="typeSelect">
+                <option value="mixed">Mixed</option>
+                <option value="addition">Addition</option>
+                <option value="subtraction">Subtraction</option>
+                <option value="multiplication">Multiplication</option>
+                <option value="division">Division</option>
+            </select>
+
+            <label for="difficultySelect">Difficulty</label>
+            <select id="difficultySelect">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="mixed">Mixed</option>
+            </select>
+
+            <label for="speedSelect">Speed</label>
+            <select id="speedSelect">
+                <option value="6">Walking</option>
+                <option value="12" selected>Jogging</option>
+                <option value="20">Running</option>
+            </select>
+
+            <button id="startBtn" class="btn">Start</button>
+            <button id="pauseBtn" class="btn small">Pause</button>
+            <button id="topRestartBtn" class="btn small">Restart</button>
+        </div>
+
+        <div class="scoreboard">
+            <div class="score-large">Score: <span id="score">0</span></div>
+            <div class="score-small">High Score: <span id="highScore">0</span></div>
+        </div>
+    </header>
+
+    <main class="main-area">
+        <section class="problem-display">
+            <h1 id="problemText">Choose settings and press Start</h1>
+        </section>
+    </main>
+
+    <br><br>
+
+    <!-- Game Container -->
+    <div id="gameContainer" class="canvas-wrap">
+        <button id="lockScreenBtn">🔒 Lock Screen</button>
+        <div id="lockOverlay" class="hidden"></div>
+        <canvas id="gameCanvas" width="720" height="640" aria-label="SnakeMath game board"></canvas>
+    </div>
+
+    <!-- Game Over Popup -->
+    <div id="gameOverPopup" class="popup hidden" role="dialog" aria-modal="true">
+        <div class="popup-box">
+            <h2>Game Over!</h2>
+            <p id="finalScoreText">Final Score: 0</p>
+            <div class="popup-actions">
+                <button id="popupRestart" class="btn large">Play Again</button>
+                <button id="popupBack" class="btn ghost">Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

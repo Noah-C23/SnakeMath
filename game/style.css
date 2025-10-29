@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Luckiest+Guy&family=Bangers&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Fredoka One', cursive;
+    background: linear-gradient(135deg, #A0E7E5 0%, #B4F8C8 100%);
+    color: #173f4f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.game-header {
+    font-family: 'Bangers', cursive;
+    font-size: 3rem;
+    color: #1E90FF;
+    text-align: center;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 0 #fff;
+    max-width: 90vw;
+    word-wrap: break-word;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffffcc;
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.selectors {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.selectors label {
+    font-size: 1rem;
+    color: #1E90FF;
+}
+
+.selectors select {
+    font-size: 1rem;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 2px solid #39FF14;
+    background: #fff;
+    min-width: 120px;
+    transition: all 0.2s ease;
+}
+
+.selectors select:hover {
+    border-color: #1E90FF;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    background: #39FF14;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: #30e312;
+}
+
+.btn.small {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+}
+
+.btn.large {
+    padding: 12px 18px;
+    font-size: 1.1rem;
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 2px solid #1E90FF;
+    color: #1E90FF;
+}
+
+.btn.ghost:hover:not(:disabled) {
+    background: #1E90FF;
+    color: #fff;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ===== SCOREBOARD ===== */
+.scoreboard {
+    text-align: right;
+    min-width: 180px;
+}
+
+.score-large {
+    font-size: 1.25rem;
+    color: #1E90FF;
+    font-weight: 700;
+}
+
+.score-small {
+    font-size: 0.95rem;
+    color: #2C3E50;
+}
+
+/* ===== GAME AREA ===== */
+.main-area {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.problem-display h1 {
+    font-size: 2rem;
+    color: #1E90FF;
+    text-align: center;
+    background: #fff;
+    padding: 10px 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== CANVAS ===== */
+.canvas-wrap {
+    background: transparent;
+    padding: 8px;
+    border-radius: 16px;
+    position: relative;
+}
+
+#gameCanvas {
+    display: block;
+    background: linear-gradient(180deg, #ffffff, #f2fcff);
+    border: 6px dashed rgba(30, 144, 255, 0.18);
+    border-radius: 14px;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 5/4;
+    image-rendering: pixelated;
+    z-index: 1;
+    position: relative;
+}
+
+/* ===== LOCK SCREEN BUTTON ===== */
+#lockScreenBtn {
+    display: none;
+    z-index: 5;
+}
+
+/* ===== POPUP ===== */
+.popup {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-box {
+    background: #fff;
+    padding: 26px;
+    border-radius: 16px;
+    text-align: center;
+    width: min(420px, 90%);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.popup-box h2 {
+    font-size: 2.2rem;
+    color: #FF4081;
+    margin-bottom: 8px;
+}
+
+.popup-box p {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: #2C3E50;
+}
+
+.popup-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* ===== MEDIUM SCREENS ===== */
+@media screen and (max-width: 430px) {
+    body {
+        gap: 2px;
+        padding: 4px;
+    }
+
+    .game-header {
+        font-size: 1.4rem;
+        max-width: 90vw;
+        word-wrap: break-word;
+        margin-bottom: 2px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        gap: 2px;
+        align-items: stretch;
+        margin-bottom: 2px;
+        padding: 4px 4px;
+    }
+
+    .selectors {
+        justify-content: space-between;
+        width: 100%;
+        gap: 4px;
+    }
+
+    .selectors label {
+        font-size: 0.75rem;
+    }
+
+    .selectors select {
+        font-size: 0.75rem;
+        padding: 3px 5px;
+        min-width: 75px;
+    }
+
+    .problem-display h1 {
+        font-size: 0.95rem;
+        padding: 3px 6px;
+        margin-bottom: 2px;
+    }
+
+    /* Bigger canvas for small screens */
+    #gameCanvas {
+        width: 98vw;
+        /* almost full width */
+        height: 80vw;
+        /* taller for bigger cells */
+        border-width: 3px;
+        max-width: none;
+    }
+
+    .btn {
+        font-size: 0.75rem;
+        padding: 4px 6px;
+    }
+
+    #lockScreenBtn {
+        display: inline-block;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        background: #1E90FF;
+        color: #fff;
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 0.85rem;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    #lockScreenBtn:hover {
+        background: #0d75d8;
+        transform: translateX(-50%) scale(1.05);
+    }
+}
